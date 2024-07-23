@@ -1,0 +1,34 @@
+{
+  "productos": [
+    {
+      "nombre": "Salchipapa",
+      "precio": "2000",
+      "id": 1
+    },
+    {
+      "nombre": "Salchipapa",
+      "precio": "1500",
+      "id": 2
+    },
+    {
+      "nombre": "Salchipapa",
+      "precio": "1000",
+      "id": 3
+    },
+    {
+      "nombre": "Taco",
+      "precio": "4000",
+      "id": 6
+    },
+    {
+      "nombre": "Taco",
+      "precio": "4500",
+      "id": 7
+    },
+    {
+      "nombre": "Taco",
+      "precio": "5000",
+      "id": 8
+    }
+  ]
+}

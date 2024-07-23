@@ -1,0 +1,26 @@
+body {
+    /* background-color: #121212; */
+    background-color: tomato
+}
+
+ul {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0px;
+    background-color: #121212;
+    height: 70px;
+}
+
+
+.spacer {
+    height: 90px;
+    /* Altura del navbar */
+}
+
+#btn_mas {
+    width: 151px;
+    height: 149px;
+}
