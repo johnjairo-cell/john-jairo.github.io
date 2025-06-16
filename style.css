@@ -24,3 +24,255 @@ ul {
     width: 151px;
     height: 149px;
 }
+
+/* =====================
+   RESET Y FUENTES
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #000;
+  color: white;
+}
+
+/* =====================
+   TIPOGRAFÍA
+===================== */
+h1, h2 {
+  font-family: 'Merriweather', serif;
+}
+
+/* =====================
+   LAYOUT Y SECCIONES
+===================== */
+
+header, nav, footer {
+  text-align: center;
+  padding: 20px;
+}
+
+.hero {
+  position: relative;
+  background-image: url('ruta-de-tu-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 100px 20px;
+  color: white;
+  overflow: hidden;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.video-grid iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+}
+
+/* =====================
+   BOTONES
+===================== */
+.hero button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero button:hover {
+  background-color: #e84141;
+  transform: scale(1.05);
+}
+
+/* =====================
+   ANIMACIONES Y EFECTOS
+===================== */
+
+/* Textos y botón en .hero */
+.hero h2, .hero p, .hero button {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero h2 { animation-delay: 0.2s; }
+.hero p  { animation-delay: 0.4s; }
+.hero button { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Título con zoom y resplandor */
+.hero h2 {
+  animation: zoomInGlow 1s ease-out both;
+}
+
+@keyframes zoomInGlow {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+    text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Videos con fade-in */
+.video-grid iframe {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInVideo 1s ease forwards;
+}
+
+@keyframes fadeInVideo {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.video-grid iframe:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* =====================
+   INTRO DE BIENVENIDA
+===================== */
+.intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #2e3a59 0%, #1c243b 100%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: glowPulse 3.5s ease-in-out;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    background: radial-gradient(circle at center, #0d111c 0%, #000000 100%);
+  }
+  50% {
+    background: radial-gradient(circle at center, #2e3a59 0%, #1c243b 100%);
+  }
+}
+
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #ffc107;
+  font-family: 'Merriweather', serif;
+  animation: typing 3.5s steps(30, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.intro-overlay.closing {
+  animation: introExit 1.5s ease-out forwards;
+}
+
+@keyframes introExit {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.05); display: none; visibility: hidden; }
+}
+
+/* =====================
+   FOOTER
+===================== */
+
+footer {
+  background-color: #2e3a59;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+footer::before {
+  content: "“Cada historia contada es una voz que ya no está en silencio.”";
+  display: block;
+  font-style: italic;
+  font-size: 1.1em;
+  color: #ffc107;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: appearQuote 2s ease-out forwards;
+}
+
+@keyframes appearQuote {
+  to { opacity: 1; }
+}
+
+footer p {
+  opacity: 0;
+  animation: fadeInFooter 1s ease 2s forwards;
+}
+
+@keyframes fadeInFooter {
+  to { opacity: 1; }
+}
+
+footer::after {
+  content: "🕊️";
+  display: block;
+  font-size: 2.2em;
+  margin-top: 12px;
+  color: #ffc107;
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+.svg-paloma {
+  width: 120px;
+  margin: 20px auto;
+  display: block;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 4px rgba(255, 193, 7, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(255, 193, 7, 0.6);
+    transform: scale(1.1);
+  }
+}
+
