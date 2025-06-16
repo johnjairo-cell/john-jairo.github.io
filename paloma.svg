@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="svg-paloma">
+  <path d="M10,100 C40,10 160,10 190,100 C160,190 40,190 10,100 Z"
+        fill="none" stroke="#ffc107" stroke-width="2"
+        stroke-dasharray="600" stroke-dashoffset="600">
+    <animate attributeName="stroke-dashoffset" from="600" to="0" dur="3s" fill="freeze" />
+  </path>
+</svg>
